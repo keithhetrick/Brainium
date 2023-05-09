@@ -15,8 +15,8 @@ export default function Post(props) {
 
   const [generating, setGenerating] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
   const { deletePost } = useContext(PostsContext);
 
   const handleDeleteConfirm = async () => {

@@ -1,10 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "../components/Logo";
-import HeroImage from "../public/hero.webp";
-import Pexels1 from "/public/pexels1.jpeg";
-import Pexels2 from "/public/pexels2.jpeg";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);

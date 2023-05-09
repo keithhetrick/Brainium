@@ -73,42 +73,6 @@ export const AppLayout = ({
                 <div className="bg-slate-800 flex items-center gap-2 h-20 px-2 align-center">
                   {!!user ? (
                     <>
-                      {/* <button
-                        data-dropdown-toggle="dropdownAvatarName"
-                        className="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white"
-                        type="button"
-                      >
-                        <span className="sr-only">Open user menu</span>
-                        <Image
-                          src={user?.picture}
-                          alt={user?.name}
-                          height={30}
-                          width={30}
-                          className="w-8 h-8 mr-2 rounded-full"
-                        />
-                        <p className="text-xs">{user?.name}</p>
-                        <svg
-                          className="w-4 h-4 mx-1.5"
-                          aria-hidden="true"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                      </button>
-
-                      <div
-                        data-dropdown-menu="dropdownAvatarName"
-                        className="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="user-menu"
-                      > */}
                       <Link
                         href="/api/auth/logout"
                         className="block px-4 py-2 text-sm text-right text-gray-600 hover:bg-gray-100 hover:text-gray-900"
@@ -126,7 +90,6 @@ export const AppLayout = ({
                         </div>
                         Sign out
                       </Link>
-                      {/* </div> */}
                     </>
                   ) : (
                     <Link href="/api/auth/login" className="btn">

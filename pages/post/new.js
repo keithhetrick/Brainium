@@ -14,8 +14,6 @@ export default function NewPost(props) {
   const [keywords, setKeywords] = useState("");
   const [generating, setGenerating] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [isBuffering, setIsBuffering] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,18 +41,6 @@ export default function NewPost(props) {
       setGenerating(false);
     }
   };
-
-  useEffect(() => {
-    if (progress < 100) {
-      const interval = setInterval(() => {
-        setProgress(progress + 1);
-      }, 100);
-
-      return () => clearInterval(interval);
-    } else {
-      setIsBuffering(true);
-    }
-  }, [progress]);
 
   // isMobile state
   useEffect(() => {
@@ -94,24 +80,6 @@ export default function NewPost(props) {
         <div className="text-green-500 mt-3 flex h-full animate-pulse w-full flex-col justify-center items-center">
           <FontAwesomeIcon icon={faBrain} className="text-8xl" />
           <h6>Generating...</h6>
-
-          {isBuffering ? (
-            <div className="w-1/2 h-2 bg-slate-500 rounded-full mt-4">
-              <div
-                className="h-full bg-green-500 rounded-full"
-                style={{ width: `100%` }}
-              >
-                Buffering
-              </div>
-            </div>
-          ) : (
-            <div className="w-1/2 h-2 bg-slate-500 rounded-full mt-4">
-              <div
-                className="h-full bg-green-500 rounded-full"
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>
-          )}
         </div>
       )}
 
@@ -169,25 +137,6 @@ export default function NewPost(props) {
         <div className="text-green-500 flex h-full animate-pulse w-full flex-col justify-center items-center">
           <FontAwesomeIcon icon={faBrain} className="text-8xl" />
           <h6>Generating...</h6>
-          <div className="w-1/2 h-2 rounded-full mt-4">
-            {isBuffering ? (
-              <div className="w-1/2 h-2 bg-slate-500 rounded-full mt-4">
-                <div
-                  className="h-full bg-green-500 rounded-full"
-                  style={{ width: `100%` }}
-                >
-                  Buffering
-                </div>
-              </div>
-            ) : (
-              <div className="w-1/2 h-2 bg-slate-500 rounded-full mt-4">
-                <div
-                  className="h-full bg-green-500 rounded-full"
-                  style={{ width: `${progress}%` }}
-                ></div>
-              </div>
-            )}
-          </div>
         </div>
       )}
 
